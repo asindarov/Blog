@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Update Blog
+{% endblock title %}
+
+
+{% block content %}
+
+<form method="post">
+	{% csrf_token %}
+
+	{{form.media}}
+	{{form.as_p}}
+	<input type="submit" value="Create" name="">
+</form>
+
+{% endblock content %}

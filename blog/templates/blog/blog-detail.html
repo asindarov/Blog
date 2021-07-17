@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+{{article.title}}
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col">
+      
+    </div>
+    <div class="col-8">
+      
+      {{article.content |safe}}
+
+    </div>
+    <div class="col">
+      
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript"></script>
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}
+Asadbek's Blog
+{% endblock title %}
+
+{% block content %}
+
+<h1>Home Page</h1>
+
+        <section id="home" class="border p-5 mt-5 flex align-items-center">
+        <div class="container">
+            <div class="row justify-between">
+                <div class="col-xl-8 col-lg-10 col-12 stagger-animation">
+                    <div class="about flex align-items-center">
+                        <img style="width: 20%; border-radius: 50%;" class="w-2" src="../static/blog/assets/images/asadbek.png" alt="Asadbek" />
+                        <div class="about-detail anim-item">
+                            <h1 class="title">Asadbek Sindarov</h1>
+                            <h3 class="desc">Software Engineer</h3>
+                            <div class="social-links flex
+                                    align-items-center">
+                                <a class="icon-youtube" target="_blank" href="https://www.youtube.com/azimjonpulatov">
+                                    
+                                </a>
+                                <a class="icon-twitter" target="_blank" href="https://twitter.com/azimjondev"></a>
+                                <a class="icon-github" target="_blank" href="https://github.com/azimjohn"></a>
+                                <a class="icon-linkedin" target="_blank" href="https://linkedin.com/in/azimjondev/">
+                                   
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail">
+                        <p class="size-big anim-item">I write about non-technical stuff in the technical world.</p>
+                        <div class="btns-wrapper anim-item">
+                            <a href="#" class="btn btn-primary">Résumé</a>
+                            <a href="#" class="btn btn-secondary">About Me</a>
+                        </div>
+                        <div class="" style="display: flex;">
+                        	<div style="border-radius: 50%; background-color: red; padding: 2%;"></div>
+                        	<div></div>
+                        	<div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+{% endblock content %}

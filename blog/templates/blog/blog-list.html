@@ -1,16 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Blog</title>
-</head>
-<body>
+{% extends 'blog/base.html' %}
 
+{% block title %}
+Asadbek's Blog
+{% endblock title %}
+
+{% block content %}
+<ul class="list-wrapper">
 {% for post in object_list %}
+	
+	<li class="item" style="width: 50%;">
+		<a class="list-item" href="{% url 'blog-detail' post.pk post.slug %}">
+			<div class="date">{{post.created_date | date:"d M, Y"}}</div>
+			<div class="title">{{post.title}}</div>
 
-	<p>{{post.content | safe}}</p>
+		</a>
 
+	<img id="arrow" src="../static/blog/assets/images/right.png" width="10px">
+	</li>
+	{% if request.user.is_authenticated %}
+		<a class="btn btn-default" href="{% url 'blog-update' post.pk post.slug %}">Update</a>
+		<a class="btn btn-danger" href="{% url 'blog-delete' post.pk post.slug %}">Delete</a>
+
+		
+	{% endif %}
 {% endfor %}
-
-</body>
-</html>
+	
+</ul>
+<div style="position: fixed;top: 15%;right: 0;  border-bottom: 1px solid #333; border-top: 1px solid #333; padding:2% 1%">
+	<h5 class="font-weight-bold">NEWSLETTER</h5>
+	<p>Subscribe to <a href="https://t.me/AsadbekSindarov">@AsadbekSindarov</a> Telegram Channel</p>
+</div>
+{% endblock content %}

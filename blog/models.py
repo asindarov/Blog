@@ -29,17 +29,22 @@ class Article(models.Model):
 def get_topbanner_filename(instance, filename):
     title = instance.title
     slug = slugify(title)
+    print("get_topbanner_filename: ",slug, filename)
+   
     return "documents/banner/{}/{}".format(slug, filename)
 
 
 
 def get_image_filename(instance, filename):
-    title = instance.blog.id
+    title = instance.title
     slug = slugify(title)
+    print("get_image_filename: ",slug, filename)
+   
     return "post_images/post_images_{}/{}".format(slug, filename)
 
 
 def get_user_image_filename(instance, filename):
-    title = instance.author
+    title = instance.title
     slug = slugify(title)
+    print("get_user_image_filename: ",slug, filename)
     return "user_image_{}/{}".format(slug, filename)
